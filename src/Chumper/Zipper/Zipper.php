@@ -180,7 +180,7 @@ class Zipper
             };
         } else {
             $matchingMethod = function ($haystack) use ($files) {
-                return starts_with($haystack, $files);
+                return \Illuminate\Support\Str::startsWith($haystack, $files);
             };
         }
 
