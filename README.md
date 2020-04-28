@@ -7,9 +7,7 @@ Feel free to read the code, to fork it or to use it in whatever way you want.
 
 ## Update 25th February 2020
 
-I have merged a PR that includes a security fixe to mitigate zip directory traversal attacks. \
-**This package is still archived and should be swapped out with another package.** \
-However, as long as security fixes will come in I see it as my basic obligation to update this package on demand.
+The original package is not maintained anymore. This is a fork to support Laravel 7+
 
 # Zipper
 
@@ -20,16 +18,20 @@ This is a simple Wrapper around the ZipArchive methods with some handy functions
 ## Installation
 
 1. Add this package to the list of required packages, inside `composer.json`
-  * for Laravel 5: `"chumper/zipper": "1.0.x"`
-  * ~~for Laravel 4: `"chumper/zipper": "0.5.x"`~~
-2. Run `composer update`
+  * for Laravel 7: `"chumper/zipper": "2.0.x"`
 
-3. Go to `app/config/app.php`
+2. Add to `composer.json`
+```
+        "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/elegantmedia/Zipper"
+        }]
+```
 
-  * add to providers `Chumper\Zipper\ZipperServiceProvider::class`
-  * add to aliases `'Zipper' => Chumper\Zipper\Zipper::class`
+3. Run `composer update`
 
-You can now access Zipper with the `Zipper` alias.
+4. Package will be auto discovered by Laravel 7.
 
 ## Simple example
 ```php
